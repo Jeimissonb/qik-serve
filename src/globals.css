@@ -1,3 +1,16 @@
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --black-500: #121212;
+  --brown-700: #4F372F;
+  --gray-100: #8A94A4;
+  --gray-200: #DADADA;
+  --gray-300: ##5F5F5F;
+  --gray-400: #464646;
+  --white-100: #F8F9FA;
+  --white-200: #EEEEEE;
+}
+
 * {
   margin: 0;
   padding: 0;
