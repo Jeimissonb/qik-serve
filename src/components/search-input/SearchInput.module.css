@@ -1,0 +1,37 @@
+.inputWithAdornment {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 2.75rem; /** 44px */
+  background-color: #fff;
+}
+
+.inputAdornment {
+  padding: 0.625rem 0.75rem 0.625rem 0.75rem; /** 0.625rem = 10px, 0.75rem = 12px*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 1.232rem; /** 19,71px */
+    height: 1.232rem; /** 19,71px */
+  }
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 0.813rem 0 0.688rem 0.768rem; /** 0.813rem = 13px, 0.0688rem = 11px, 0.768rem = 12,29px */
+  flex: 1;
+}
+
+input::placeholder {
+  color: var(--black-300);
+}

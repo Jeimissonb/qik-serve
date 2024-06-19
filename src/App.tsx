@@ -1,4 +1,4 @@
-import { Menu } from "@components";
+import { MainPage, Menu } from "@components";
 import { MenuProvider, WebSettingsProvider } from "@contexts";
 
 export function App() {
@@ -8,6 +8,7 @@ export function App() {
       <WebSettingsProvider>
         <MenuProvider>
           <Menu />
+          <MainPage />
         </MenuProvider>
       </WebSettingsProvider>
     </>

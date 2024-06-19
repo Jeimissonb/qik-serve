@@ -1,0 +1,15 @@
+.container {
+  width: 100%
+}
+
+.searchContainer {
+  width: 100%;
+}
+
+.paddingSearchContainer {
+  padding: 0.375rem 13rem 0.375rem 13rem; /** 0.375rem = 6px, 13rem = 208px */
+}
+
+.paddingSearchContainerMobile {
+  padding: 1rem; /** 16px */
+}

@@ -10,10 +10,9 @@ interface IToggleMenu {
 
 export function ToggleMenu({ menus }: IToggleMenu) {
 
-  const [isMobile, setIsMobile] = useState(false);
-
   const { navBackgroundColour, backgroundColour } = useWebSettingsContext();
-
+  
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkIsMobile = () => {
