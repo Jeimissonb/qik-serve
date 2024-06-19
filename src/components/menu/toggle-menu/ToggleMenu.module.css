@@ -1,0 +1,19 @@
+.mobileMenuContainer {
+  min-height: 4rem; /** 64px **/
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+.mobileContainer {
+  padding: 14px, 16px, 14px, 16px;
+}
+
+.desktopMenuContainer {
+  min-height: 3.25rem; /** 52px **/
+  display: flex;
+  bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}

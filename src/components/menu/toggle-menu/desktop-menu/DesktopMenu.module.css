@@ -1,0 +1,17 @@
+.desktopMenu {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.desktopMenuItem {
+  width: 14.5rem; /** 232px */
+  height: 3.25rem; /** 52px */
+  padding: 0.906rem 0 0.906rem 0; /** 14.5px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

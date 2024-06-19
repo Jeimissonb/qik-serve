@@ -1,7 +1,15 @@
+import { Menu } from "@components";
+import { MenuProvider, WebSettingsProvider } from "@contexts";
 
 export function App() {
 
   return (
-    <div>Initial commit</div>
+    <>
+      <WebSettingsProvider>
+        <MenuProvider>
+          <Menu />
+        </MenuProvider>
+      </WebSettingsProvider>
+    </>
   )
 }

@@ -23,9 +23,11 @@
     "paths": {
         "@/*": ["./src/*"],
         "@components": ["./src/components"],
-        "@img": ["./src/img"]
-    }
+        "@assets": ["./src/assets"],
+        "@contexts": ["./src/contexts"],
+      }
   },
-  "include": ["src"],
+  "include": ["./src/**/*"],
+  "exclude": ["build", "node_modules", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
