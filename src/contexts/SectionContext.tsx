@@ -2,12 +2,12 @@ import { ReactNode, createContext, useContext, useState } from "react";
 
 interface ISectionSelected {
   id: number;
-  name: string;
+  name: 'Burgers' | 'Drinks' | 'Desserts';
 }
 
 interface ISectionState {
   sectionSelected: ISectionSelected | undefined;
-  setSectionSelected: (value: ISectionSelected) => void;
+  setSectionSelected: (value: ISectionSelected | undefined) => void;
 }
 
 const SectionContext = createContext<ISectionState | undefined>(undefined);

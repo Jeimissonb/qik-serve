@@ -14,7 +14,7 @@ interface IMenuProviderProps {
 
 export function MenuProvider({ children }: IMenuProviderProps) {
 
-  const [menuItemSelected, setMenuItemSelected] = useState<string>('');
+  const [menuItemSelected, setMenuItemSelected] = useState<string>('MENU');
 
   return (
     <MenuContext.Provider

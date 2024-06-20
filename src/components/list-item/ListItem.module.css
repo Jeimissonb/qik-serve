@@ -1,0 +1,127 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 4.5rem; /** 72px  */
+  padding-bottom: 0.75rem; /** 12px */
+
+  p {
+    font-size: 1.5rem; /** 24px */
+    font-weight: 500;
+    letter-spacing: 0.0.031rem; /** 0.5px */
+    line-height: 1.758remrem; /** 28.13px */
+  }
+}
+
+.informationListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem /** 32px */
+}
+
+.invertVertical {
+  transform: scaleY(-1);
+}
+
+.information {
+  width: 26.5rem; /** 424px */
+  height: 5.313rem; /** 85px */
+  padding-top: 0.75rem; /** 12px */
+  display: flex;
+  flex-direction: column;
+}
+
+.justifyContentInitial {
+  justify-content: initial;
+}
+
+.justifyContentSpaceBetween {
+  justify-content: space-between;
+}
+
+.informationName {
+  font-weight: 500;
+}
+
+.informationDescription {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+  font-size: 1rem; /** 208px */
+  line-height: 1.172rem; /** 18.75px */
+  color: var(--gray-400);
+  padding: 0.25rem 0; /** 4px */
+}
+
+@media (max-width: 640px) {
+  .informationDescription {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    height: 2.375rem; /** 38px */
+  }
+
+  .informationPrice {
+    margin-top: 0.25rem; /** 4px */
+
+  }
+
+  .information {
+    all: initial;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .headerContainer {
+    font-family: "Roboto", sans-serif;
+
+  }
+}
+
+@media (max-width: 1380px) {
+  .informationDescription {
+    width: 100%;
+  }
+  .information {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1055px) {
+  .information {
+    width: 50%;
+  }
+}
+
+.informationImage {
+  width: 8rem; /** 128px */
+  height: 5.313rem; /** 85px */
+
+  img {
+    width: 8rem; /** 128px */
+    height: 5.313rem; /** 85px */
+    border-radius: 8px; /** no need convert pix to rem on border radius */
+  }
+}
+
+.informationPrice {
+  color: var(--gray-400);
+  font-weight: 500;
+  letter-spacing: 0.031rem; /** 0.5px */
+  font-size: 1rem; /** 16px */
+}

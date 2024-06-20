@@ -1,6 +1,6 @@
 import search from '@assets/Search.svg';
 import styles from './MainPage.module.css'
-import { CardSectionMenu, SearchInput } from '@components';
+import { CardSectionMenu, ListItem, SearchInput } from '@components';
 import { useEffect } from 'react';
 import { IMenu } from '@models';
 import { useMenuItemsContext, useSectionContext, useWebSettingsContext } from '@contexts';
@@ -29,8 +29,8 @@ export function MainPage() {
     fetchVenue();
   }, []);
 
-  function selectSection(id: number, name: string){
-    setSectionSelected({id, name})
+  function selectSection(id: number, name: 'Burgers' | 'Drinks' | 'Desserts') {
+    setSectionSelected({ id, name })
   }
 
   return (
@@ -40,9 +40,9 @@ export function MainPage() {
       >
         <SearchInput icon={search} placeholder="Search menu items" />
       </div>
-      
+
       <div className={styles.itemsContainer}>
-        <div className={styles.itemsContent} style={{background: `${backgroundColour}`}}>
+        <div className={styles.itemsContent} style={{ background: `${backgroundColour}` }}>
           <div className={styles.sectionsMain}>
             {menu?.sections.map((section) => {
               return (
@@ -51,15 +51,23 @@ export function MainPage() {
                   key={section.id}
                   name={section.name}
                   image={section.images[0].image}
-                  onClick={() => selectSection(section.id, section.name)}
+                  onClick={() => selectSection(section.id, section.name as 'Burgers' | 'Drinks' | 'Desserts')}
                 />
               )
             })}
           </div>
+
+          <div className={styles.listItemsContainer}>
+            {menu?.sections.map((section) => {
+              return (
+                <ListItem key={section.id} header={section.name} items={section.items} />
+              )
+            })}
+          </div>
         </div>
+
         <div className={styles.basketListContainer}>
           oi
-
         </div>
       </div>
     </div>
