@@ -16,7 +16,7 @@ export function ToggleMenu({ menus }: IToggleMenu) {
 
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 393);
+      setIsMobile(window.innerWidth < 640);
     };
 
     checkIsMobile();

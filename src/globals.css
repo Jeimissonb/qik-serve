@@ -1,4 +1,5 @@
 :root {
+  --white: #FFFFFF;
   --black-300: #2C2C2C;
   --black-500: #121212;
   --gray-100: #8A94A4;
@@ -25,4 +26,10 @@ body, input, textarea, button {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+
+@media(max-width: 640px) {
+  body {
+    background: var(--white);
+  }
 }

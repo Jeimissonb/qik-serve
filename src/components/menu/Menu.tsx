@@ -17,7 +17,7 @@ interface IVenue {
 const menuItems = ['MENU', 'ENTRAR', 'CONTATO'];
 
 export function Menu() {
-  const { bannerImage, setBannerImage, setBackgroundColour, setNavBackgroundColour, navBackgroundColour } = useWebSettingsContext();
+  const { bannerImage, setBannerImage, setBackgroundColour, setNavBackgroundColour } = useWebSettingsContext();
 
   useEffect(() => {
     // Fetch data from API provided

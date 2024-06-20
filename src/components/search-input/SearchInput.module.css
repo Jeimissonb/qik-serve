@@ -1,6 +1,14 @@
 .inputWithAdornment {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 64rem; /** 1024px */
+}
+
+@media(min-width: 640px) {
+  .inputWithAdornment {
+    min-width: 34rem; /** 544px */
+  }
 }
 
 .inputContainer {

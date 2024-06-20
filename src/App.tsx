@@ -1,5 +1,6 @@
 import { MainPage, Menu } from "@components";
-import { MenuProvider, WebSettingsProvider } from "@contexts";
+import { MenuProvider, SectionProvider, WebSettingsProvider } from "@contexts";
+import { MenuItemsProvider } from "./contexts/MenuItemsContext";
 
 export function App() {
 
@@ -7,8 +8,12 @@ export function App() {
     <>
       <WebSettingsProvider>
         <MenuProvider>
-          <Menu />
-          <MainPage />
+          <MenuItemsProvider>
+            <SectionProvider>
+              <Menu />
+              <MainPage />
+            </SectionProvider>
+          </MenuItemsProvider>
         </MenuProvider>
       </WebSettingsProvider>
     </>
