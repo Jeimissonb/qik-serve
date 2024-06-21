@@ -35,6 +35,16 @@
   }
 }
 
+@media(max-width: 393px) {
+  .modalHeader { 
+    height: 17rem; /** 272rem */
+    img {
+      height: 17rem; /** 272rem */
+      width: 100%;
+    }
+  }
+}
+
 @media (max-width: 534px) {
   .modalHeader {
     width: 100%;
@@ -95,16 +105,6 @@
   line-height: 1.1719rem; /** 18.75px */
   letter-spacing: 0.5px;
   color: var(--gray-400);
-}
-
-@media(max-width: 393px) {
-  .modalHeader { 
-    height: 17rem; /** 272rem */
-    
-    img {
-      height: 17rem; /** 272rem */
-    }
-  }
 }
 
 .modifierNameContainer {

@@ -1,9 +1,9 @@
 import search from '@assets/Search.svg';
 import styles from './MainPage.module.css'
-import { Basket, CardSectionMenu, ListItem, SearchInput } from '@components';
+import { Basket, BasketDialog, CardSectionMenu, ListItem, SearchInput } from '@components';
 import { useEffect, useState } from 'react';
 import { IMenu } from '@models';
-import { useMenuContext, useMenuItemsContext, useSectionContext, useWebSettingsContext } from '@contexts';
+import { useBasketContext, useMenuContext, useMenuItemsContext, useSectionContext, useWebSettingsContext } from '@contexts';
 
 export function MainPage() {
 
@@ -11,9 +11,19 @@ export function MainPage() {
   const { menuItemSelected } = useMenuContext();
   const { setSectionSelected } = useSectionContext();
   const { backgroundColour } = useWebSettingsContext();
+  const { countElements } = useBasketContext();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [searchFilter, setSearchFilter] = useState('');
   const [isFiltering, setIsFiltering] = useState(false);
+
+  function openModal() {
+    setModalOpen(true);
+  };
+
+  function closeModal() {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     // Fetch data from API provided
@@ -91,13 +101,25 @@ export function MainPage() {
                   )
                 })}
               </div>
+
+              <div className={styles.allergInfoContainer}>
+                <div className={styles.allergInfo}> View allergy information </div>
+              </div>
+
+              <div className={styles.basketInfoContainer}>
+                {countElements() > 0 &&
+                  <div className={styles.basketInfo} onClick={openModal}> {`Your basket • ${countElements()} item`}</div>
+                }
+              </div>
             </div>
 
             <div className={styles.basketListContainer}>
               <Basket />
             </div>
           </div>
-        </div>}
+        </div>
+      }
+      <BasketDialog isOpen={modalOpen} onClose={closeModal} />
     </>
 
   )

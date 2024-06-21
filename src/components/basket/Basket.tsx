@@ -3,7 +3,11 @@ import styles from './Basket.module.css'
 import { BasketItemContainer } from "./basket-item-container/BasketItemContainer";
 import { useEffect, useState } from "react";
 
-export function Basket() {
+interface IBasket {
+  isDialog?: boolean;
+}
+
+export function Basket({ isDialog = false }: IBasket) {
   const { itemsOfBasket } = useBasketContext();
 
   const [isEmptyBasket, setIsEmptyBasket] = useState(itemsOfBasket.length === 0);
@@ -31,23 +35,22 @@ export function Basket() {
   });
 
   useEffect(() => {
-    console.log(itemsOfBasket.length)
     if (itemsOfBasket.length === 0) {
       setIsEmptyBasket(true)
     } else {
       setIsEmptyBasket(false)
     }
-
     return () => {
       setIsEmptyBasket(false)
     }
   }, [itemsOfBasket])
 
   return (
-    <div className={styles.basketContainer}>
-      <div className={styles.basketHeader}>Carrinho</div>
+    <div className={ isDialog ? styles.basketContainerDialog : styles.basketContainer}>
+      <div className={isDialog ? styles.basketHeaderDialog : styles.basketHeader}>Carrinho</div>
       {isEmptyBasket ?
-        <div className={styles.emptyBasket}> Seu carrinho está vazio </div> :
+        <div className={styles.emptyBasket}> Seu carrinho está vazio </div> 
+        :
         <div>
           <div className={styles.basketItems}>
             {uniqueItems.map((item) => {
@@ -55,21 +58,17 @@ export function Basket() {
             })}
           </div>
 
-          <div className={styles.totals}>
+          <div className={isDialog ? styles.totalsDialog : styles.totals}>
             <div className={styles.subTotal}>
               <div className={styles.subTotalText}>Sub total</div>
               <div className={styles.subTotalValue}>{`R$${calculateTotalValue()}`}</div>
             </div>
             <div className={styles.divisor} />
             <div className={styles.totalFinal}>
-              <div className={styles.totalFinalText}>Total</div>
+              <div className={styles.totalFinalText}>Total: </div>
               <div className={styles.totalFinalValue}>{`R$${calculateTotalValue()}`}</div>
             </div>
           </div>
-
-
-
-
         </div>
       }
     </div>

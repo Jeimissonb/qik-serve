@@ -1,0 +1,117 @@
+.basketModalInfoContainer {
+  width: 100%;
+  height: 5rem; /** 80px */
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem; /** 1.5rem = 24px, 0.5rem = 8px */
+  gap: 0.625rem; /** 10px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+
+  background: var(--white);
+}
+
+.basketModalInfo {
+  width: 21.563rem; /** 345px */
+  height: 3rem; /**48px */
+  gap: 0.5rem; /** 8px */
+  border-radius: 1.5rem; /** 24px */
+  padding: 1rem; /** 16px */
+  background: var(--brown-700);
+  color: var(--white);
+
+  font-family: Roboto;
+  font-size: 1rem; /** 16px */
+  font-weight: 700;
+  line-height: 1.172rem; /** 18.75px */
+  text-align: center;
+  cursor: pointer;
+}
+
+.basketModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 3.9375rem; /** 63px */
+
+}
+
+@media (min-height: 900px) {
+  .modalOverlay {
+  }
+}
+
+.basketModal {
+  background: var(--white-100);
+  width: 393px; /** 480px */
+  max-width: 90%;
+  z-index: 1000;
+  position: relative;
+  min-height: 728px;
+  height: fit-content;
+}
+
+.modalHeader {
+  position: relative;
+  max-width: 100%; /** 100% */
+
+  img {
+    width: 30rem; /** 480px */
+    height: 20rem; /** 320px */
+  }
+}
+
+@media(max-width: 393px) {
+  .modalHeader { 
+    height: 17rem; /** 272rem */
+    img {
+      height: 17rem; /** 272rem */
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 534px) {
+  .modalHeader {
+    width: 100%;
+    max-width: 100%;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.heightWithImage {
+  width: 30rem; /** 480px */
+  height: 20rem; /** 320px */
+}
+
+.basketModalCloseButton {
+  background: var(--white-100);
+  border: 1px solid var(--white-100);
+  border-radius: 20px;
+  cursor: pointer;
+  width: 1.75rem; /** 28px */
+  height: 1.75rem; /** 28px */
+  position: absolute;
+  top: 1rem; /** 18px */
+  right: 1rem; /** 16px */
+  z-index: 1001;
+
+  img {
+    width: 0.75rem; /** 12px */
+    height: 0.75rem; /** 12px */
+    object-fit: cover;
+  }
+}
+
+

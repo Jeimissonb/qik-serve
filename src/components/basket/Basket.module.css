@@ -4,6 +4,16 @@
   box-shadow: 0 0.125rem 0.875rem 0 #00000026; /** 0.125rem = 2px,  0.875rem = 14px */
 }
 
+.basketContainerDialog {
+  width: 100%;
+  height: fit-content;
+}
+
+.basketItems {
+  max-height: 30rem; /** 480px */
+  overflow-y: auto;
+}
+
 .basketHeader {
   width: 100%;
   background: var(--white-100);
@@ -20,10 +30,33 @@
   box-shadow: 0 0.125rem 0.875rem 0 #00000026; /** 0.125rem = 2px,  0.875rem = 14px */
 }
 
+.basketHeaderDialog {
+  width: 100%;
+  background: var(--white);
+  color: var(--black-500);
+  padding: 1rem 1.5rem 1rem 1.5rem; /** 1.5rem = 24px, 1rem = 16px */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem; /** 24px */
+  line-height: 1.758rem; /** 28.13px */
+  letter-spacing: 0.047rem; /** 0.75px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-200);
+}
+
 .totals {
   width: 100%;
   height: fit-content;
   padding: 1rem 0 0 0; /** 16px */
+}
+
+.totalsDialog {
+  width: 100%;
+  height: fit-content;
+  padding: 1rem 0 0 0; /** 16px */
+  background: var(--white-100);
 }
 
 .emptyBasket {

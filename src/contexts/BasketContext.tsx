@@ -4,6 +4,7 @@ import { ReactNode, createContext, useContext, useEffect, useState } from "react
 interface IBasketState {
   itemsOfBasket: IItems[];
   setItemsOfBasket: React.Dispatch<React.SetStateAction<IItems[]>>;
+  countElements: () => number;
 }
 
 const BasketContext = createContext<IBasketState | undefined>(undefined);
@@ -16,11 +17,16 @@ export function BasketProvider({ children }: IBasketProviderProps) {
 
   const [itemsOfBasket, setItemsOfBasket] = useState<IItems[]>([]);
 
+  function countElements () {
+    return itemsOfBasket.length
+  }
+
   return (
     <BasketContext.Provider
       value={{
         itemsOfBasket,
-        setItemsOfBasket
+        setItemsOfBasket,
+        countElements
       }}>
       {children}
     </BasketContext.Provider>
