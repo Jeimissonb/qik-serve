@@ -1,29 +1,51 @@
 import { HTMLAttributes, useEffect, useState } from "react";
 import styles from './ListItem.module.css'
 import arrow from '@assets/Arrow.svg';
-import { useSectionContext } from "@contexts";
-
-
-interface IItems {
-  id: number;
-  name: string;
-  description: string;
-  images: [{ id: number, image: string }];
-  price: number;
-}
+import { useBasketContext, useSectionContext } from "@contexts";
+import { DialogItem } from "@components";
+import { IItems } from "@models";
 
 interface IListItem extends HTMLAttributes<HTMLDivElement> {
   header: string;
-  items: IItems[]
+  items: IItems[];
+  isFiltering: boolean
 }
 
-export function ListItem({ header, items }: IListItem) {
+export function ListItem({ header, items, isFiltering = false }: IListItem) {
 
   const { sectionSelected, setSectionSelected } = useSectionContext();
+  const { itemsOfBasket } = useBasketContext();
+
   const [isOpenList, setIsOpenList] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalItemToShow, setModalItemToShow] = useState<IItems | undefined>();
+  const [badgeCountQuantity, setBadgeCountQuantity] = useState(0);
+
+  
+  function addBadgeQuantity(id: number) {
+    const badgeNumberOfItems = itemsOfBasket.filter(itemFilter => itemFilter.id === id || itemFilter.fatherId === id).length
+    
+    return badgeNumberOfItems;
+  }
+
+  function openModal(item: IItems) {
+    setModalOpen(true);
+    setModalItemToShow(item);
+  };
+
+  function closeModal() {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
-    if(sectionSelected === undefined) {
+    if (isFiltering) {
+      setIsOpenList(true);
+    }
+  }, [isFiltering])
+
+
+  useEffect(() => {
+    if (sectionSelected === undefined) {
       return undefined;
     }
 
@@ -32,15 +54,15 @@ export function ListItem({ header, items }: IListItem) {
     } else {
       setIsOpenList(false)
     }
-  
-  }, [sectionSelected])
-  
 
-  function formatItemPriceToStringToShow(item: IItems): string | number {
-    let newItemPriceToShow: string = '';
+  }, [sectionSelected])
+
+
+  function formatItemPriceToStringToShow(item: IItems): string | number | undefined {
+    let newItemPriceToShow: string | undefined = '';
 
     if (item.id === 1625704 && item.name === 'Nutella') {
-      newItemPriceToShow = item.price.toString().replace('.', ',');
+      newItemPriceToShow = item.price?.toString().replace('.', ',');
     }
 
     if (newItemPriceToShow !== '') {
@@ -60,25 +82,35 @@ export function ListItem({ header, items }: IListItem) {
       <div className={styles.headerContainer}>
         <p>{header}</p>
         <div onClick={toggleOpenList}>
-          <img src={arrow} className={isOpenList ? undefined : styles.invertVertical } alt="Arrow icon to open and close submenu options" />
+          <img src={arrow}
+            className={isOpenList ? styles.cursorPointer : `${styles.cursorPointer} ${styles.invertVertical}`}
+            alt="Arrow icon to open and close submenu options"
+          />
         </div>
       </div>
 
       {isOpenList &&
         <div className={styles.informationListContainer}>
           {items.map((item) => {
+
             return (
-              <div className={styles.listContainer} key={item.id}>
+              <div
+                key={item.id}
+                className={`${styles.cursorPointer} ${styles.listContainer}`}
+                onClick={() => openModal(item)}
+              >
                 <div
                   className={
                     Array.isArray(item.images) && item.images !== null ?
-                      `${styles.information} ${styles.justifyContentSpaceBetween}` :
+                      `${styles.information} ${styles.justifyContentSpaceBetweenAndHeight}` :
                       `${styles.information} ${styles.justifyContentInitial}`
                   }
                 >
                   {item.name &&
                     <div className={styles.informationName}>
-                      {item.name}
+                      <div className={styles.badgeQuantity}>{addBadgeQuantity(item.id)}</div>
+                      <div>{item.name}</div>
+
                     </div>
                   }
                   {item.description &&
@@ -100,12 +132,18 @@ export function ListItem({ header, items }: IListItem) {
                     })}
                   </div>
                 }
+
               </div>
             )
           })}
         </div>
       }
 
+      <DialogItem
+        isOpen={modalOpen}
+        onClose={closeModal}
+        item={modalItemToShow}
+      />
     </div>
   )
 }

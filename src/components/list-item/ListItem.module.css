@@ -20,7 +20,7 @@
     font-size: 1.5rem; /** 24px */
     font-weight: 500;
     letter-spacing: 0.0.031rem; /** 0.5px */
-    line-height: 1.758remrem; /** 28.13px */
+    line-height: 1.758rem; /** 28.13px */
   }
 }
 
@@ -34,9 +34,12 @@
   transform: scaleY(-1);
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
+
 .information {
   width: 26.5rem; /** 424px */
-  height: 5.313rem; /** 85px */
   padding-top: 0.75rem; /** 12px */
   display: flex;
   flex-direction: column;
@@ -46,12 +49,36 @@
   justify-content: initial;
 }
 
-.justifyContentSpaceBetween {
+.justifyContentSpaceBetweenAndHeight {
   justify-content: space-between;
+  height: 5.313rem; /** 85px */
+
 }
 
 .informationName {
+  display: flex;
+  gap: 0.5rem; /** 8px */
+  align-items: center;
+  text-align: center;
   font-weight: 500;
+}
+
+.badgeQuantity {
+  width: 1.125rem; /** 18px */
+  height: 1.125rem; /** 18px */
+  padding: 0.063rem 0.25rem 0.063rem 0.25rem; /** =4px, =1px */
+  background: var(--brown-700);
+  color: var(--white);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;/** 14px */
+  line-height: 1.026rem;/** 16.41px */
+
 }
 
 .informationDescription {

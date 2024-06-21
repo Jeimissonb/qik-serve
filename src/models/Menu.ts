@@ -1,3 +1,5 @@
+import { IItems } from ".";
+
 export interface IMenu {
   id: number;
   type: string;
@@ -8,13 +10,7 @@ export interface IMenu {
       [
         { id: number, image: string }
       ],
-      items:
-      [
-        {
-          id: number, name: string, description: string, price: number,
-          images: [{ id: number, image: string }]
-        }
-      ]
+      items: IItems[]
     }
   ]
 }

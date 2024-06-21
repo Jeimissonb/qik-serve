@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
+
+
 .sectionImage {
   width: 82px;
   height: 82px;

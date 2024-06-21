@@ -1,0 +1,294 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (min-height: 900px) {
+  .modalOverlay {
+    padding-top: 3.9375rem; /** 63px */
+  }
+}
+
+.modal {
+  background-color: white;
+  width: 30rem; /** 480px */
+  max-width: 90%;
+  z-index: 1000;
+  position: relative;
+  height: fit-content;
+}
+
+.modalHeader {
+  position: relative;
+  max-width: 100%; /** 100% */
+
+  img {
+    width: 30rem; /** 480px */
+    height: 20rem; /** 320px */
+  }
+}
+
+@media (max-width: 534px) {
+  .modalHeader {
+    width: 100%;
+    max-width: 100%;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.heightWithImage {
+  width: 30rem; /** 480px */
+  height: 20rem; /** 320px */
+}
+
+.closeButton {
+  background: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 20px;
+  cursor: pointer;
+  width: 1.75rem; /** 28px */
+  height: 1.75rem; /** 28px */
+  position: absolute;
+  top: 1.125rem; /** 18px */
+  right: 1rem; /** 16px */
+  z-index: 1001;
+
+  img {
+    width: 0.75rem; /** 12px */
+    height: 0.75rem; /** 12px */
+    object-fit: cover;
+  }
+}
+
+.modalContent {
+  width: 100%;
+  height: fit-content;
+  min-height: 6.625rem; /** 106px */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /** 8px */
+  padding: 1rem; /** 16px */
+}
+
+.modalContentTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem; /** 24px */
+  line-height: 1.7663rem; /** 28.13px */
+}
+
+.modalContentDescription {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /** 16px */
+  line-height: 1.1719rem; /** 18.75px */
+  letter-spacing: 0.5px;
+  color: var(--gray-400);
+}
+
+@media(max-width: 393px) {
+  .modalHeader { 
+    height: 17rem; /** 272rem */
+    
+    img {
+      height: 17rem; /** 272rem */
+    }
+  }
+}
+
+.modifierNameContainer {
+  height: 4.25rem; /** 68px */
+  padding: 1rem 1.5rem; /** 16px 24px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.modifierNameContainerBgColor {
+  background: var(--white-100);
+}
+
+.modifierName {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem; /** 16px */
+  line-height: 1.1719rem; /** 18.75px */
+  letter-spacing: 0.5px;
+  color: var(--gray-400);
+}
+
+.modifierItemName {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem; /** 16px */
+  line-height: 1.1719rem; /** 18.75px */
+  color: var(--black-500);
+}
+
+.modifierItemPrice {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /** 16px */
+  line-height: 1.1719rem; /** 18.75px */
+  color: var(--gray-400);
+}
+
+.checkbox {
+  width: 1.25rem; /** 20px */
+  height: 1.25rem; /** 20px */
+  background-color: white;
+  border-radius: 100%;
+  vertical-align: middle;
+  border: 0.1875rem solid var(--gray-300); /** 3px */
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.checkbox:checked {
+  background-color: #24c223;
+}
+
+.modifierNameDescription {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--gray-300);
+  font-size: 1rem; /** 16px */
+  line-height: 1.1719rem; /** 18.75px */
+  letter-spacing: 0.5px;
+}
+
+.modifierItemContainer {
+  height: 4.25rem; /** 68px */
+  padding: 1rem 1.5rem; /** 16px 24px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsDiv {
+  height: 7.625rem; /** 122px */
+  background: #ffffff4d;
+  padding: 0.5rem 1.5rem 1rem; /** 8px 24px 16px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem; /** 10px */
+}
+
+.minusAndMoreButtons {
+  display: flex;
+  gap: 1rem; /** 16px */
+  justify-content: center;
+  align-items: center;
+}
+
+.subtractionButton {
+  width: 2rem; /** 32px */
+  height: 2rem; /** 32px */
+  background: var(--gray-200);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+
+  img {
+    width: 1.125rem; /** 18px */
+    height: 0.1875rem; /** 3px */
+    border-radius: 4px;
+    background: var(--gray-300);
+  }
+}
+
+.subtractionButton:disabled {
+  background: var(--gray-100);
+}
+
+.quantityId {
+  width: 2.9375rem; /** 47px */
+  height: 1.1719rem; /** 18.71px */
+  font-weight: 600;
+  font-size: 1.5rem; /** 24px */
+  line-height: 1.7913rem; /** 28.64px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sumButton {
+  width: 2rem; /** 32px */
+  height: 2rem; /** 32px */
+  background: var(--brown-700);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+
+  img {
+    width: 1.125rem; /** 18px */
+    height: 1.125rem; /** 18px */
+  }
+}
+
+.sumButton:disabled {
+  background: var(--gray-100);
+}
+
+.addToTheCartButton {
+  background: var(--brown-700);
+  width: 27rem; /** 432px */
+  height: 3rem; /** 48px */
+  border-radius: 40px;
+  color: var(--white);
+  padding: 0.25rem 1.5rem; /** 4px 24px */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem; /** 18px */
+  letter-spacing: 0.75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.addToTheCartButton:disabled {
+  background: var(--gray-100);
+}
+
+@media (max-width: 640px) {
+  .addToTheCartButton {
+    width: 21.5625rem; /** 345px */
+  }
+}
+
+@media (max-width: 390px) {
+  .addToTheCartButton {
+    width: 15.3125rem; /** 245px */
+  }
+}
+
+@media (max-width: 390px) {
+  .addToTheCartButton {
+    width: 11.25rem; /** 180px */
+    font-size: 0.75rem; /** 12px */
+  }
+}

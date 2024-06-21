@@ -1,6 +1,5 @@
 import { MainPage, Menu } from "@components";
-import { MenuProvider, SectionProvider, WebSettingsProvider } from "@contexts";
-import { MenuItemsProvider } from "./contexts/MenuItemsContext";
+import { BasketProvider, MenuProvider, SectionProvider, WebSettingsProvider, MenuItemsProvider } from "@contexts";
 
 export function App() {
 
@@ -10,8 +9,10 @@ export function App() {
         <MenuProvider>
           <MenuItemsProvider>
             <SectionProvider>
-              <Menu />
-              <MainPage />
+              <BasketProvider>
+                <Menu />
+                <MainPage />
+              </BasketProvider>
             </SectionProvider>
           </MenuItemsProvider>
         </MenuProvider>

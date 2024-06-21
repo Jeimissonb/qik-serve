@@ -19,7 +19,7 @@ export function CardSectionMenu({ sectionId, name, image, ...props }: ICardMenuT
       style={{
         paddingBottom: !(sectionId === sectionSelected?.id && name === sectionSelected?.name) ? '2px' : undefined // clear extra space created by borderBottom on active section item
       }}
-      className={styles.sectionContainer} {...props}
+      className={`${styles.cursorPointer} ${styles.sectionContainer}`} {...props}
     >
       <div
         style={{
