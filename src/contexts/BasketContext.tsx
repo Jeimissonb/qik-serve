@@ -1,5 +1,5 @@
 import { IItems } from "@models";
-import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 interface IBasketState {
   itemsOfBasket: IItems[];

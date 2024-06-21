@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import styles from './DesktopMenu.module.css';
 import { useMenuContext, useWebSettingsContext } from '@contexts';
 

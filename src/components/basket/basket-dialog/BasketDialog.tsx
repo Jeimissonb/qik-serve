@@ -1,8 +1,6 @@
 import styles from './BasketDialog.module.css';
 import close from '@assets/Close.svg'
 import { Basket } from '../Basket';
-import { useEffect } from 'react';
-import { useBasketContext } from '@contexts';
 
 interface IBasketDialogProps {
   isOpen: boolean;
