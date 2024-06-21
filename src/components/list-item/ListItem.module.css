@@ -19,7 +19,7 @@
   p {
     font-size: 1.5rem; /** 24px */
     font-weight: 500;
-    letter-spacing: 0.0.031rem; /** 0.5px */
+    letter-spacing: 0.031rem; /** 0.5px */
     line-height: 1.758rem; /** 28.13px */
   }
 }
@@ -27,7 +27,7 @@
 .informationListContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem /** 32px */
+  gap: 2rem; /** 32px */
 }
 
 .invertVertical {
@@ -52,7 +52,6 @@
 .justifyContentSpaceBetweenAndHeight {
   justify-content: space-between;
   height: 5.313rem; /** 85px */
-
 }
 
 .informationName {
@@ -61,6 +60,9 @@
   align-items: center;
   text-align: center;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .badgeQuantity {
@@ -76,9 +78,8 @@
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 0.875rem;/** 14px */
-  line-height: 1.026rem;/** 16.41px */
-
+  font-size: 0.875rem; /** 14px */
+  line-height: 1.026rem; /** 16.41px */
 }
 
 .informationDescription {
@@ -106,7 +107,6 @@
 
   .informationPrice {
     margin-top: 0.25rem; /** 4px */
-
   }
 
   .information {
@@ -116,7 +116,6 @@
 
   .headerContainer {
     font-family: "Roboto", sans-serif;
-
   }
 }
 

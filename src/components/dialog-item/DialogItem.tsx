@@ -29,6 +29,19 @@ export function DialogItem({ isOpen, onClose, item }: IDialogItemProps) {
     }));
   };
 
+  useEffect(() => {
+    if(!isOpen){
+      setCountItemsToBasket(0)
+    }
+  
+    return () => {
+      setSelectedModifiers({})
+      setCountItemsToBasket(0)
+
+    }
+  }, [isOpen])
+  
+
   const incrementItemsToBasket = () => setCountItemsToBasket((prev) => prev + 1);
   const decrementItemsToBasket = () => setCountItemsToBasket((prev) => (prev > 0 ? prev - 1 : 0));
 
@@ -37,18 +50,18 @@ export function DialogItem({ isOpen, onClose, item }: IDialogItemProps) {
       for (let i = 0; i < countItemsToBasket; i++) {
         setItemsOfBasket((prev) => [...prev, item]);
       }
-      return;
-    }
-
-    const selectedModifiersValues = Object.values(selectedModifiers).filter(Boolean) as IItems[];
-    if (selectedModifiersValues.length && countItemsToBasket > 0) {
-      const selectedItem = selectedModifiersValues[0];
-      selectedItem.fatherId = item?.id;
-      selectedItem.fatherName = item?.name;
-      for (let i = 0; i < countItemsToBasket; i++) {
-        setItemsOfBasket((prev) => [...prev, selectedItem]);
+    } else {
+      const selectedModifiersValues = Object.values(selectedModifiers).filter(Boolean) as IItems[];
+      if (selectedModifiersValues.length && countItemsToBasket > 0) {
+        const selectedItem = { ...selectedModifiersValues[0] };
+        selectedItem.fatherId = item?.id;
+        selectedItem.fatherName = item?.name;
+        for (let i = 0; i < countItemsToBasket; i++) {
+          setItemsOfBasket((prev) => [...prev, selectedItem]);
+        }
       }
     }
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -110,7 +123,8 @@ export function DialogItem({ isOpen, onClose, item }: IDialogItemProps) {
           </div>
           <button className={styles.addToTheCartButton} disabled={countItemsToBasket === 0} onClick={addItemToBasket}>
             Add to order • R$
-            {(Object.values(selectedModifiers).filter(Boolean)[0]?.price ?? item?.price ?? 0) * countItemsToBasket},00
+            {(Object.values(selectedModifiers).filter(Boolean)[0]?.price ?? item?.price ?? 0) * countItemsToBasket}
+            {item?.name === 'Nutella' ? '0' : ',00'}
           </button>
         </div>
       </div>

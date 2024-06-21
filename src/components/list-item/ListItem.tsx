@@ -19,8 +19,6 @@ export function ListItem({ header, items, isFiltering = false }: IListItem) {
   const [isOpenList, setIsOpenList] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalItemToShow, setModalItemToShow] = useState<IItems | undefined>();
-  const [badgeCountQuantity, setBadgeCountQuantity] = useState(0);
-
   
   function addBadgeQuantity(id: number) {
     const badgeNumberOfItems = itemsOfBasket.filter(itemFilter => itemFilter.id === id || itemFilter.fatherId === id).length
@@ -108,7 +106,7 @@ export function ListItem({ header, items, isFiltering = false }: IListItem) {
                 >
                   {item.name &&
                     <div className={styles.informationName}>
-                      <div className={styles.badgeQuantity}>{addBadgeQuantity(item.id)}</div>
+                      {addBadgeQuantity(item.id) > 0 && <div className={styles.badgeQuantity}>{addBadgeQuantity(item.id)}</div>}
                       <div>{item.name}</div>
 
                     </div>

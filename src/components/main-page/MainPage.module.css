@@ -60,8 +60,8 @@
 
 .basketListContainer {
   width: 18.75rem; /** 320px */
-  height: 8.063rem; /** 129px; */
-  background: pink;
+  min-height: 8.063rem; /** 129px; */
+  height: 100%
 }
 
 @media(max-width: 640px) {

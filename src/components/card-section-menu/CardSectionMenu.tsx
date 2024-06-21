@@ -14,6 +14,10 @@ export function CardSectionMenu({ sectionId, name, image, ...props }: ICardMenuT
   const { navBackgroundColour } = useWebSettingsContext();
   const { sectionSelected } = useSectionContext();
 
+  function getSelectedSection(): boolean {
+    return sectionId === sectionSelected?.id && name === sectionSelected?.name
+  }
+
   return (
     <div
       style={{
@@ -23,7 +27,7 @@ export function CardSectionMenu({ sectionId, name, image, ...props }: ICardMenuT
     >
       <div
         style={{
-          border: `2px solid ${navBackgroundColour}`,
+          border: getSelectedSection() ? `2px solid ${navBackgroundColour}` : undefined,
           borderRadius: '50px',
         }}
         className={styles.sectionImage}>
@@ -40,7 +44,7 @@ export function CardSectionMenu({ sectionId, name, image, ...props }: ICardMenuT
       </div>
 
       {
-        (sectionId === sectionSelected?.id && name === sectionSelected?.name) &&
+        getSelectedSection() &&
         (
           <div className={styles.selectedBorderBottomSection} />
         )

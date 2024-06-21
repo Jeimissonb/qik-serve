@@ -1,0 +1,125 @@
+.basketItemContainer {
+  height: fit-content;
+  padding: 0.5rem 1rem 0.5rem 1rem; /** 0.5rem = 8px, 1rem = 16px */
+  background: var(--white);
+}
+
+.basketItemName {
+  font-family: Roboto;
+  font-size: 1rem; /** 16px */
+  font-weight: 400;
+  line-height: 1.172rem; /** 18.75px  */
+  text-align: left;
+}
+
+.basketItemChildName {
+  font-family: Roboto;
+  font-size: 1rem; /** 16px */
+  font-weight: 400;
+  line-height: 1.172rem; /**  18.75px  */
+  text-align: left;
+  color: var(--gray-300);
+}
+
+.basketItemPrice {
+  font-family: Roboto;
+  font-size: 1rem; /** 16px */
+  font-weight: 500;
+  line-height: 1.172rem; /** 18.75px; */
+  letter-spacing: 0.5px; /** 0.5px; */
+  text-align: right;
+}
+
+.basketItemInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /** 4px  */
+}
+
+.basketItemInfo {
+  display: flex;
+  justify-content: space-between;
+  height: 1.188rem; /** 19px */
+}
+
+.buttonsDiv {
+  width: 5.875rem; /** 94px */
+  height: 2.25rem; /** 36px */
+  padding: 0.5rem; /** 8px */
+}
+
+.minusAndMoreButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtractionButton {
+  width: 1.25rem; /** 20px */
+  height: 1.25rem; /** 20px */
+  background: var(--brown-700);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+
+  img {
+    width: 0.75rem; /** 12px */
+    height: 0.188rem; /** 3px */
+    border-radius: 0.25rem;
+    background: var(--white);
+  }
+}
+
+.subtractionButton:disabled {
+  background: var(--gray-100);
+}
+
+.quantityId {
+  width: 2.9375rem; /** 47px */
+  height: 1.1719rem; /** 18.71px */
+  font-weight: 700;
+  font-size: 1rem; /** 16px */
+  line-height: 1.172rem; /** 18.75px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sumButton {
+  width: 1.25rem; /** 20px */
+  height: 1.25rem; /** 20px */
+  background: var(--brown-700);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+
+  img {
+    width: 0.75rem; /** 12px; */
+    height: 0.75rem; /** 12px; */
+  }
+}
+
+.sumButton:disabled {
+  background: var(--gray-100);
+}
+
+@media(max-width: 1220px) {
+  .basketItemName {
+    height: fit-content;
+    margin-bottom: 1.25rem; /** 20px */
+  }
+
+  .basketItemInfoContainer {
+    white-space: nowrap;
+  }
+
+  .basketItemInfo {
+    gap: 0.625rem; /** 10px */
+  }
+}
