@@ -24,7 +24,7 @@ export function MobileMenu({ menus }: IToggleMenu) {
 
   function toggleMenu() {
     setIsOpen(!isOpen);
-  };
+  }
 
   function menuToBeSelected(item: string) {
     if (item === 'MENU') {
@@ -90,4 +90,4 @@ export function MobileMenu({ menus }: IToggleMenu) {
       </div>
     </div>
   );
-};
+}

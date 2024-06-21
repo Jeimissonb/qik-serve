@@ -25,7 +25,7 @@ export function MenuProvider({ children }: IMenuProviderProps) {
       {children}
     </MenuContext.Provider>
   );
-};
+}
 
 export function useMenuContext() {
   const context = useContext(MenuContext);
@@ -33,4 +33,4 @@ export function useMenuContext() {
     throw new Error('useMenuContext must be used within a MenuContextProvider');
   }
   return context;
-};
+}

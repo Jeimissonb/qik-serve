@@ -59,4 +59,4 @@ export function DesktopMenu({ menus }: IToggleMenu) {
       ))}
     </ul>
   );
-};
+}

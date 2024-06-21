@@ -58,26 +58,6 @@
   height: fit-content;
 }
 
-.modalHeader {
-  position: relative;
-  max-width: 100%; /** 100% */
-
-  img {
-    width: 30rem; /** 480px */
-    height: 20rem; /** 320px */
-  }
-}
-
-@media(max-width: 393px) {
-  .modalHeader { 
-    height: 17rem; /** 272rem */
-    img {
-      height: 17rem; /** 272rem */
-      width: 100%;
-    }
-  }
-}
-
 @media (max-width: 534px) {
   .modalHeader {
     width: 100%;

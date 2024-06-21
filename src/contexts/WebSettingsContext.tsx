@@ -35,7 +35,7 @@ export function WebSettingsProvider({ children }: IWebSettingsProviderProps) {
       {children}
     </WebSettingsContext.Provider>
   );
-};
+}
 
 export function useWebSettingsContext() {
   const context = useContext(WebSettingsContext);
@@ -43,4 +43,4 @@ export function useWebSettingsContext() {
     throw new Error('useWebSettingsContext must be used within a WebSettingsContextProvider');
   }
   return context;
-};
+}

@@ -30,7 +30,7 @@ export function SectionProvider({ children }: ISectionProviderProps) {
       {children}
     </SectionContext.Provider>
   );
-};
+}
 
 export function useSectionContext() {
   const context = useContext(SectionContext);
@@ -38,4 +38,4 @@ export function useSectionContext() {
     throw new Error('useSectionContext must be used within a SectionContextProvider');
   }
   return context;
-};
+}

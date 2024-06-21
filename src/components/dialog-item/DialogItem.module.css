@@ -37,11 +37,14 @@
 
 @media(max-width: 393px) {
   .modalHeader { 
-    height: 17rem; /** 272rem */
+    height: auto;
     img {
-      height: 17rem; /** 272rem */
-      width: 100%;
+      height: auto;
     }
+  }
+
+  .heightWithImage {
+    all: initial;
   }
 }
 

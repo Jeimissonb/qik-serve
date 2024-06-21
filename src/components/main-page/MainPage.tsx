@@ -19,11 +19,11 @@ export function MainPage() {
 
   function openModal() {
     setModalOpen(true);
-  };
+  }
 
   function closeModal() {
     setModalOpen(false);
-  };
+  }
 
   useEffect(() => {
     // Fetch data from API provided

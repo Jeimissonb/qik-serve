@@ -31,7 +31,7 @@ export function BasketProvider({ children }: IBasketProviderProps) {
       {children}
     </BasketContext.Provider>
   );
-};
+}
 
 export function useBasketContext() {
   const context = useContext(BasketContext);
@@ -39,4 +39,4 @@ export function useBasketContext() {
     throw new Error('useBasketContext must be used within a BasketContextProvider');
   }
   return context;
-};
+}

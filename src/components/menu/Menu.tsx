@@ -37,7 +37,7 @@ export function Menu() {
     };
 
     fetchVenue();
-  }, []);
+  }, [])
 
   return (
     <div

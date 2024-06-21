@@ -29,11 +29,11 @@ export function ListItem({ header, items, isFiltering = false }: IListItem) {
   function openModal(item: IItems) {
     setModalOpen(true);
     setModalItemToShow(item);
-  };
+  }
 
   function closeModal() {
     setModalOpen(false);
-  };
+  }
 
   useEffect(() => {
     if (isFiltering) {
