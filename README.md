@@ -1,5 +1,7 @@
 # qik-serve
 
+# link to deployed site: https://qik-serve-only-to-see-design.netlify.app/
+
 ## Challenge to Experis - Front End Developer
 
 This repository contains the source code for the Experis Front End Developer challenge.
